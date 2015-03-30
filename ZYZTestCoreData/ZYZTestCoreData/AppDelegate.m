@@ -7,16 +7,19 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Photo.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+//    [self inserObject];
+//    [self queryObject];
+    [self deleteObject];
+//    [self createDocument];
     return YES;
 }
 
@@ -60,6 +63,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
+
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ZYZTestCoreData" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
@@ -122,6 +126,106 @@
             abort();
         }
     }
+}
+
+
+#define MaxCount 1000
+-(void)inserObject{
+    NSLog(@"start ...................");
+    for (int i = 0; i < MaxCount; i++) {
+        Photo* newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+        newPhoto.title = [NSString stringWithFormat:@"tilte = %d",i];
+        newPhoto.subTitle = [NSString stringWithFormat:@"subtiltle = %d",i];
+        newPhoto.photoURl = [NSString stringWithFormat:@"url = %d",i];
+        [self.managedObjectContext insertObject:newPhoto];
+
+    }
+    NSLog(@"end ......................");
+    
+    NSError* error ;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"不能保存");
+    }
+   
+    
+    NSLog(@"save ...................");
+}
+
+
+-(void)queryObject{
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.fetchLimit = 10;
+    fetchRequest.fetchOffset = 0;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"title = 'tilte = 123'"];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error;
+    NSArray* fetchObject = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    Photo* photo = [fetchObject firstObject];
+    NSLog(@"%@,%@,%@",photo.photoURl,photo.title,photo.subTitle);
+    
+}
+
+-(void)deleteObject{
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.fetchLimit = 10;
+    fetchRequest.fetchOffset = 0;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"title = 'tilte = 123'"];
+    NSEntityDescription* entity = [NSEntityDescription entityForName:@"Photo" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError* error;
+    NSArray* fetchObject = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    Photo* photo = [fetchObject firstObject];
+//    NSLog(@"%@,%@,%@",photo.photoURl,photo.title,photo.subTitle);
+    
+    [self.managedObjectContext deleteObject:photo];
+    
+    [self queryObject];
+    
+    
+}
+
+-(void)createDocument{
+    NSFileManager* file = [NSFileManager defaultManager] ;
+    
+    NSURL* documentDictionary = [[file URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+    NSURL* url = [documentDictionary URLByAppendingPathComponent:@"myDataBase"];
+    UIManagedDocument* document = [[UIManagedDocument alloc] initWithFileURL:url];
+    
+    BOOL fileExists = [file fileExistsAtPath:[url path]];
+    
+    if (fileExists) {
+        [document openWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                
+            }
+            if (!success) {
+                NSLog(@"could not open");
+            }
+        }];
+    }else{
+        [document saveToURL:url forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            if (success) {
+                
+            }
+            if (!success) {
+                NSLog(@"could not create");
+            }
+        }];
+    }
+    
+    Photo* newPhoto = [NSEntityDescription insertNewObjectForEntityForName:@"Photo" inManagedObjectContext:document.managedObjectContext];
+    
+    newPhoto.title = @"title";
+    newPhoto.subTitle = @"subtile";
+    newPhoto.photoURl = @"URL";
+    NSError* error ;
+    if (![document.managedObjectContext save:&error]) {
+        NSLog(@"save error");
+    }
+    
 }
 
 @end

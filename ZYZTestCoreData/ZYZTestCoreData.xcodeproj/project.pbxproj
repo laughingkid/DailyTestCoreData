@@ -15,6 +15,8 @@
 		C54C42141AC147590047497D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C54C42131AC147590047497D /* Images.xcassets */; };
 		C54C42171AC147590047497D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C54C42151AC147590047497D /* LaunchScreen.xib */; };
 		C54C42231AC147590047497D /* ZYZTestCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C54C42221AC147590047497D /* ZYZTestCoreDataTests.m */; };
+		C5AB944D1AC3AF1400140659 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AB944C1AC3AF1400140659 /* Photo.m */; };
+		C5AB94501AC3AF1400140659 /* PhotoGrapher.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AB944F1AC3AF1400140659 /* PhotoGrapher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		C54C421C1AC147590047497D /* ZYZTestCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYZTestCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54C42211AC147590047497D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C54C42221AC147590047497D /* ZYZTestCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYZTestCoreDataTests.m; sourceTree = "<group>"; };
+		C5AB944B1AC3AF1400140659 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		C5AB944C1AC3AF1400140659 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		C5AB944E1AC3AF1400140659 /* PhotoGrapher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGrapher.h; sourceTree = "<group>"; };
+		C5AB944F1AC3AF1400140659 /* PhotoGrapher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGrapher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,10 @@
 				C54C42131AC147590047497D /* Images.xcassets */,
 				C54C42151AC147590047497D /* LaunchScreen.xib */,
 				C54C420A1AC147590047497D /* ZYZTestCoreData.xcdatamodeld */,
+				C5AB944E1AC3AF1400140659 /* PhotoGrapher.h */,
+				C5AB944F1AC3AF1400140659 /* PhotoGrapher.m */,
+				C5AB944B1AC3AF1400140659 /* Photo.h */,
+				C5AB944C1AC3AF1400140659 /* Photo.m */,
 				C54C42031AC147590047497D /* Supporting Files */,
 			);
 			path = ZYZTestCoreData;
@@ -225,6 +235,8 @@
 				C54C42091AC147590047497D /* AppDelegate.m in Sources */,
 				C54C42061AC147590047497D /* main.m in Sources */,
 				C54C420F1AC147590047497D /* ViewController.m in Sources */,
+				C5AB944D1AC3AF1400140659 /* Photo.m in Sources */,
+				C5AB94501AC3AF1400140659 /* PhotoGrapher.m in Sources */,
 				C54C420C1AC147590047497D /* ZYZTestCoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +430,7 @@
 				C54C42281AC147590047497D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C54C42291AC147590047497D /* Build configuration list for PBXNativeTarget "ZYZTestCoreDataTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				C54C422B1AC147590047497D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E2F9144-E7D1-4258-B5F8-0AF017814E3B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ZYZTestCoreData</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4BDDA7AE91434E5487BFBC36E4625574944E2359</key>
+		<string>https://github.com/laughingkid/DailyTestCoreData.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ZYZTestCoreData/ZYZTestCoreData.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4BDDA7AE91434E5487BFBC36E4625574944E2359</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/laughingkid/DailyTestCoreData.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4BDDA7AE91434E5487BFBC36E4625574944E2359</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4BDDA7AE91434E5487BFBC36E4625574944E2359</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DailyTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
